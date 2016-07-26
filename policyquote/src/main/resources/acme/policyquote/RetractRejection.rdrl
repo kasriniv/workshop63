@@ -1,0 +1,12 @@
+package acme.policyquote;
+
+import java.lang.Number;
+
+rule "RetractRejection"
+	dialect "mvel"
+	ruleflow-group "retract"
+	when
+		Rejection( )
+	then
+		System.out.println("Retracting rejection: " + Rejection); retract(Rejection);
+end

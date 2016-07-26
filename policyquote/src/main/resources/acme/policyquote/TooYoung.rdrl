@@ -1,0 +1,15 @@
+package acme.policyquote;
+
+import java.lang.Number;
+
+rule "TooYoung"
+	dialect "mvel"
+	ruleflow-group "rejection"
+	when
+		driver( age < 18 )
+	then
+		Rejection fact0 = new Rejection();
+		fact0.setReason( "Too Young" );
+		insert( fact0 );
+		System.out.println("too young rule triggered");
+end

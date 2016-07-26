@@ -1,0 +1,51 @@
+<scenario>
+  <name>TooYoung.scenario</name>
+  <maxRuleFirings>100000</maxRuleFirings>
+  <globals/>
+  <fixtures>
+    <fact-data>
+      <type>driver</type>
+      <fieldData>
+        <field-data>
+          <name>age</name>
+          <value>2</value>
+          <nature>4</nature>
+        </field-data>
+      </fieldData>
+      <name>d</name>
+      <isModify>false</isModify>
+    </fact-data>
+    <org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
+      <name>rejection</name>
+    </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
+    <execution-trace>
+      <executionTimeResult>13</executionTimeResult>
+      <numberOfRulesFired>1</numberOfRulesFired>
+    </execution-trace>
+    <expect-fact>
+      <fieldValues>
+        <expect-field>
+          <fieldName>reason</fieldName>
+          <expected>Too Young</expected>
+          <actualResult>Too Young</actualResult>
+          <successResult>true</successResult>
+          <explanation>[Rejection] field [reason] was [Too Young].</explanation>
+          <operator>==</operator>
+          <nature>1</nature>
+        </expect-field>
+      </fieldValues>
+      <name>Rejection</name>
+      <anonymous>true</anonymous>
+    </expect-fact>
+  </fixtures>
+  <lastRunResult>2016-07-11 17:00:12.93 UTC</lastRunResult>
+  <rules/>
+  <inclusive>false</inclusive>
+  <packageName>acme.policyquote</packageName>
+  <imports>
+    <imports/>
+  </imports>
+  <ksessions>
+    <string>defaultKieSession</string>
+  </ksessions>
+</scenario>

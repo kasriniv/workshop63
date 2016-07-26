@@ -1,0 +1,14 @@
+package acme.policyquote;
+
+rule "SafeAdults"
+no-loop true
+//lock-on-active true
+ruleflow-group "calculation"
+    when
+        driver : driver(age > 24, numOfAccidents < 2, numofTickets <= 2)
+        policy : policy( policytype == "AUTO")
+    then
+        modify(policy) {setPrice(120)};
+        System.out.println("fired rule " + kcontext.getRule().getName());
+ end
+

@@ -1,0 +1,15 @@
+package acme.policyquote;
+
+rule "RiskyYouth"
+no-loop true
+salience 100
+//lock-on-active true
+ruleflow-group "calculation"
+    when
+        driver : driver(age >= 18 && < 25, numOfAccidents >= 2 || numofTickets >=3)
+        policy : policy( policytype == "AUTO")
+    then
+        modify(policy) {setPrice(700)};
+        System.out.println("fired rule " + kcontext.getRule().getName());
+
+end

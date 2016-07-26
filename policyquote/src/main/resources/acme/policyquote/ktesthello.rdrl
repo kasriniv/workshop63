@@ -1,0 +1,12 @@
+package acme.policyquote;
+
+import java.lang.Number;
+
+rule "ktesthello"
+	dialect "mvel"
+	ruleflow-group "hello"
+	when
+		ktestdo( )
+	then
+		System.out.println("hi from rule")
+end

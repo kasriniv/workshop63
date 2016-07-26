@@ -1,0 +1,12 @@
+package acme.policyquote;
+
+import java.lang.Number;
+
+rule "RetractDriver"
+	dialect "mvel"
+	ruleflow-group "retract"
+	when
+		d : driver( )
+	then
+		System.out.println("Retracting Driver " ); retract (d);
+end
